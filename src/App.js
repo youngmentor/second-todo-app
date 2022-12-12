@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useReducer } from 'react'
 import './App.css'
 import Card from './Card'
-import data from './data.json';
+// import data from './data.json';
 
 function reducer(todos,action){
   switch (action.type){
@@ -9,6 +9,7 @@ function reducer(todos,action){
       return [...todos, newTodo(action.payload.name)]
     case "checked":
         return action.payload.check
+
      case "delete":
       return action.payload.check
   }
@@ -20,14 +21,16 @@ function newTodo(inputRef) {
 
 function App() {
   const inputRef = useRef('')
-  const [state, dispatch] = useReducer(reducer, data)
+  const [state, dispatch] = useReducer(reducer, [])
 
   const handleClick = () => {
   dispatch({type: 'Add', payload: { name: inputRef.current.value } })
   }
 
 
-  // useEffect(()=>{ console.log(Todo)},[Todo])
+  useEffect(()=>{ 
+    inputRef.current.value=''
+  },[state])
 
   return (
     <div className="Todo">

@@ -1,0 +1,144 @@
+* {
+  margin: 0px;
+}
+.Todo {
+  height: 100vh;
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(
+    to top right,
+    rgba(33, 144, 225, 1.9) 30%,
+    rgba(100, 217, 48)
+  );
+}
+.Head_wrap {
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  border-radius: 5px;
+  /* background: linear-gradient(to top right, ); */
+}
+.Head {
+  background-color: white;
+  height: 38px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 3px 0px 3px;
+  border-radius: 5px;
+}
+.Head input {
+  width: 90%;
+  height: 70%;
+  outline: none;
+  border: none;
+}
+.Head button {
+  font-size: 26px;
+  font-weight: 100;
+  height: 30px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
+.Card {
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  min-height: 300px;
+}
+.Card_wrap {
+  /* background-color: grey; */
+  width: 90%;
+  height: 100%;
+  padding: 10px;
+}
+.wrap {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card {
+  margin-top: 15px;
+}
+.scroll {
+  overflow-y: scroll;
+  max-height: 350px;
+  min-height: 0px;
+  background-color: rgba(118, 116, 116, 0.4);
+  height: 70%;
+  border-radius: 0px 10px;
+}
+/* .scroll {
+  width: 200px; height: 400px;
+  overflow: hidden;
+}     */
+.card_top {
+  background-color: #3f41aa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: white;
+  border-radius: 10px 10px 0px 0px;
+}
+.parent {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width:auto;
+}
+.parent p{
+  font-weight: 100;
+  font-size:20px;
+}
+.Main_cardtop {
+  /* background-color: #b9f4b7; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: black;
+  margin-top: 2px;
+}
+.status{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: auto;
+}
+.status p{
+  font-size: 20px;
+}
+.delete:hover {
+   cursor: pointer;
+   color: red;
+}
+.check:hover{
+  cursor: pointer;
+}
+.add_button:hover{
+  cursor: pointer;
+  color: blue;
+}

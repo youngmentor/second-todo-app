@@ -88,10 +88,10 @@
   height: 70%;
   border-radius: 0px 10px;
 }
-/* .scroll {
-  width: 200px; height: 400px;
-  overflow: hidden;
-}     */
+.scroll:hover{
+  cursor: pointer;
+  /* background-color: black; */
+}
 .card_top {
   background-color: #3f41aa;
   display: flex;

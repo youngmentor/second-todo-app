@@ -1,7 +1,7 @@
-import { useState, useReducer } from 'react'
+// import { useRef, useEffect } from 'react'
 import './App.css'
 import { MdDelete } from "react-icons/md";
-const Card = ({ Todo, update }) => {
+const Card = ({ Todo,setChecked, HandleDelete }) => {
     let Total = Todo.length
     let completed = 0
     let pending = 0
@@ -9,18 +9,6 @@ const Card = ({ Todo, update }) => {
     Todo.map((item) => { 
         item.checkers ? completed += 1 : pending += 1
      })
-
-    const HandleDelete = (item) => {
-        let newList = Todo.filter((value) => { return value.id !== item.id })
-      update({type: "checked", payload: { check: newList } })
-    }
-
-    const setChecked = (id) => {
-        const newArr = Todo.map((i) => i.id === id ? { ...i, checkers: !i.checkers } : { ...i }); 
-        update({type: "checked", payload: { check: newArr } }) 
-    }
-
-
     return (
         <div className="Card">
             <div className='Card_wrap'>

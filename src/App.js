@@ -2,15 +2,16 @@ import { useRef, useEffect, useReducer } from 'react'
 import './App.css'
 import Card from './Card'
 import data from './data.json';
-
 function reducer(todos, action) {
   switch (action.type) {
     case 'Add':
-      return [...todos, { id: action.payload.id, todo: action.payload.todo, checkers: false }]
+      return [...todos, { id: action.payload.id + 1, todo: action.payload.todo, checkers: false }]
     case "checked":
       return action.payload.check
     case "delete":
       return action.payload.delet
+    default:
+      return todos
   }
 }
 
@@ -37,7 +38,8 @@ function App() {
 
 
   useEffect(() => {
-    inputRef.current.value = ''
+    inputRef.current.value = '';
+    // localStorage.setItem('state', JSON.stringify(state));
   }, [state])
 
   return (

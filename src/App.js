@@ -18,7 +18,7 @@ function reducer(todos, action) {
 
 function App() {
   const inputRef = useRef('')
-  const [state, dispatch] = useReducer(reducer, data)
+  const [state, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('state')))
 
 
   const handleClick = () => {
@@ -39,7 +39,7 @@ function App() {
 
   useEffect(() => {
     inputRef.current.value = '';
-    // localStorage.setItem('state', JSON.stringify(state));
+    localStorage.setItem('state', JSON.stringify(state));
   }, [state])
 
   return (

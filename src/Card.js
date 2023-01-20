@@ -1,7 +1,6 @@
-// import { useRef, useEffect } from 'react'
 import './App.css'
 import { MdDelete } from "react-icons/md";
-const Card = ({ Todo,setChecked, HandleDelete }) => {
+const Card = ({ Todo, setChecked, HandleDelete }) => {
     let Total = Todo.length
     let completed = 0
     let pending = 0

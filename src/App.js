@@ -3,6 +3,7 @@ import './App.css'
 import Card from './Card'
 import data from './data.json';
 import Header from './Header'
+import Swal from 'sweetalert2'
 function reducer(todos, action) {
   switch (action.type) {
     case 'Add':
@@ -19,13 +20,20 @@ function reducer(todos, action) {
 
 function App() {
   const inputRef = useRef('')
-  const [state, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('state')))
+  const [state, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('state')) || [] )
   const [theme, setTheme]= useState(JSON.parse(localStorage.getItem("theme")))
    
   const Toggle =()=>{
     setTheme(!theme)
   }
   const handleClick = () => {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'todo added successfully',
+      showConfirmButton: false,
+      timer: 1000
+    })
     if (inputRef.current.value) {
       dispatch({ type: 'Add', payload: { todo: inputRef.current.value, id: state.length + 1 } })
     }
@@ -47,7 +55,7 @@ function App() {
   }, [state, theme])
 
   return (
-    <div className="Todo">
+    <div className="Todo"  style={{backgroundColor: theme? "gray" : null}} >
       <div className='Head_wrap'>
         <Header theme={theme} Toggle={Toggle} />
         <div className='Head'>
@@ -55,7 +63,7 @@ function App() {
           <button className='add_button' onClick={() => { handleClick(); }} >+</button>
         </div>
       </div>
-      <Card Todo={state} setChecked={setChecked} HandleDelete={HandleDelete} />
+      <Card Todo={state} setChecked={setChecked} HandleDelete={HandleDelete}  theme={theme} />
     </div>
   )
 }

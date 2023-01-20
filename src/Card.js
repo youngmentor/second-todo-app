@@ -1,6 +1,6 @@
 import './App.css'
 import { MdDelete } from "react-icons/md";
-const Card = ({ Todo, setChecked, HandleDelete }) => {
+const Card = ({ Todo, setChecked, HandleDelete, theme }) => {
     let Total = Todo.length
     let completed = 0
     let pending = 0
@@ -9,7 +9,7 @@ const Card = ({ Todo, setChecked, HandleDelete }) => {
         item.checkers ? completed += 1 : pending += 1
      })
     return (
-        <div className="Card">
+        <div className="Card"  style={{backgroundColor: theme? "gray" : null}} >
             <div className='Card_wrap'>
                 <div className="text">
                     <h1>Todo's</h1>
